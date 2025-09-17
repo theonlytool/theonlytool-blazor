@@ -7,7 +7,13 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-builder.Services.AddFluentUIComponents();
+ConfigureServices(builder.Services, builder.HostEnvironment.BaseAddress);
 
 await builder.Build().RunAsync();
+return;
+
+static void ConfigureServices(IServiceCollection services, string baseAddress)
+{
+    services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
+    services.AddFluentUIComponents();
+}
