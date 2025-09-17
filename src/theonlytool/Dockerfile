@@ -7,10 +7,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["theonlytool/theonlytool.csproj", "theonlytool/"]
-RUN dotnet restore "theonlytool/theonlytool.csproj"
+COPY ["src/theonlytool/theonlytool.csproj", "src/theonlytool/"]
+RUN dotnet restore "src/theonlytool/theonlytool.csproj"
 COPY . .
-WORKDIR "/src/theonlytool"
+WORKDIR "/src/src/theonlytool"
 RUN dotnet build "./theonlytool.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
