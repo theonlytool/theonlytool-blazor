@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout the code
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
 
       # Install .NET SDK
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4
         with:
           dotnet-version: 9.0.x
       - name: Install .NET WebAssembly Tools
@@ -31,7 +31,7 @@ jobs:
 
       # Deploy the site
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: publish/wwwroot
