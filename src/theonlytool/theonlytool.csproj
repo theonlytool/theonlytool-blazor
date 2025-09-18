@@ -6,15 +6,12 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <GHPages>true</GHPages>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BlazorWasmPreRendering.Build" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all"/>
-        <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components" />
-        <PackageReference Include="Microsoft.FluentUI.AspNetCore.Components.Icons" />
+        <PackageReference Include="MudBlazor" />
         <PackageReference Include="PublishSPAforGitHubPages.Build" />
     </ItemGroup>
 
@@ -26,6 +23,6 @@
       <Content Include="..\..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
-    </ItemGroup>    
+    </ItemGroup>
 
 </Project>

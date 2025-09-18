@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.FluentUI.AspNetCore.Components;
+using MudBlazor.Services;
 using theonlytool;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
@@ -14,6 +14,6 @@ return;
 
 static void ConfigureServices(IServiceCollection services, string baseAddress)
 {
-    services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
-    services.AddFluentUIComponents();
+    services.AddScoped(_ => new HttpClient { BaseAddress = new Uri(baseAddress) });
+    services.AddMudServices();
 }
