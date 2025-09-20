@@ -1,0 +1,51 @@
+@page "/tools/base64"
+@using System.Text
+@using theonlytool.Pages.Components
+
+<h3>Base64</h3>
+
+<MudGrid>
+    <MudItem xs="12" md="12">
+        <SettingCard Title="Direction" Caption="Choose the direction of the conversion" Icon="@Icons.Material.Filled.SwapHoriz">
+            <MudToggleGroup T="bool" SelectionMode="SelectionMode.SingleSelection" @bind-Value="Encode">
+                <MudToggleItem Value="true">Encode</MudToggleItem>
+                <MudToggleItem Value="false">Decode</MudToggleItem>
+            </MudToggleGroup>
+        </SettingCard>
+    </MudItem>
+    
+    <MudItem xs="6">
+        <MudPaper Class="pa-4 mud-height-full">
+            <MudTextField T="string" DebounceInterval="500" OnDebounceIntervalElapsed="UpdateOutput" @bind-Value="Input" Label="Input" Variant="Variant.Outlined" FullWidth="true" Lines="20" />
+        </MudPaper>
+    </MudItem>
+
+    <MudItem xs="6">
+        <MudPaper Class="pa-4 mud-height-full">
+            <MudTextField T="string" @bind-Value="Output" ReadOnly="true" Label="Output" Variant="Variant.Outlined" FullWidth="true" Lines="20" />
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+@code {
+
+    public bool Encode { get; set; } = true;
+    public string Input { get; set; } = string.Empty;
+    public string Output { get; set; } = string.Empty;
+
+    private static string EncodeBase64(string input)
+    {
+        return Convert.ToBase64String(Encoding.UTF8.GetBytes(input));
+    }
+
+    private static string DecodeBase64(string input)
+    {
+        return Encoding.UTF8.GetString(Convert.FromBase64String(input));
+    }
+
+    private void UpdateOutput(string newValue)
+    {
+        Input = newValue;
+        Output = Encode ? EncodeBase64(Input) : DecodeBase64(Input);
+    }
+}
