@@ -6,7 +6,7 @@
 <MudGrid>
     <MudItem xs="12" md="12">
         <SettingCard Title="Direction" Caption="Choose the direction of the conversion" Icon="@Icons.Material.Filled.SwapHoriz">
-            <MudToggleGroup T="bool" SelectionMode="SelectionMode.SingleSelection" @bind-Value="Encode">
+            <MudToggleGroup T="bool" SelectionMode="SelectionMode.SingleSelection" Value="Encode" ValueChanged="@(v=> { Encode = v; UpdateOutput(Input); })">
                 <MudToggleItem Value="true">Encode</MudToggleItem>
                 <MudToggleItem Value="false">Decode</MudToggleItem>
             </MudToggleGroup>
