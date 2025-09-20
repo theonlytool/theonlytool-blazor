@@ -11,6 +11,13 @@ public class Base64Service
 
     public string Decode(string input)
     {
-        return Encoding.UTF8.GetString(Convert.FromBase64String(input));
+        try
+        {
+            return Encoding.UTF8.GetString(Convert.FromBase64String(input));
+        }
+        catch (FormatException _)
+        {
+            return "The Input is not a valid Base64 string.";
+        }
     }
 }
