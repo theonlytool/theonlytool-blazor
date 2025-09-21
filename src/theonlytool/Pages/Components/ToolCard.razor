@@ -16,6 +16,6 @@
 
     private string GetLink()
     {
-        return string.IsNullOrEmpty(Link) ? $"/tool/{Title.Replace(" ", "").ToLowerInvariant()}" : Link;
+        return string.IsNullOrEmpty(Link) ? $"/tools/{Title.Replace(" ", "").ToLowerInvariant()}" : Link;
     }
 }
