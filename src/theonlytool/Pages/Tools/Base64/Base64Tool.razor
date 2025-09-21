@@ -13,13 +13,13 @@
         </SettingCard>
     </MudItem>
     
-    <MudItem xs="6">
+    <MudItem xs="12" md="6">
         <MudPaper Class="pa-4 mud-height-full">
             <MudTextField T="string" DebounceInterval="500" OnDebounceIntervalElapsed="UpdateOutput" @bind-Value="Input" Label="Input" Variant="Variant.Outlined" FullWidth="true" Lines="20" />
         </MudPaper>
     </MudItem>
 
-    <MudItem xs="6">
+    <MudItem xs="12" md="6">
         <MudPaper Class="pa-4 mud-height-full">
             <MudTextField T="string" @bind-Value="Output" ReadOnly="true" Label="Output" Variant="Variant.Outlined" FullWidth="true" Lines="20" />
         </MudPaper>
