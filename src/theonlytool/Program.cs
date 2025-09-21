@@ -19,4 +19,8 @@ static void ConfigureServices(IServiceCollection services, string baseAddress)
     services.AddMudServices();
     
     services.AddSingleton<Base64Service>();
+
+#if DEBUG
+    services.AddSassCompiler();
+#endif
 }
