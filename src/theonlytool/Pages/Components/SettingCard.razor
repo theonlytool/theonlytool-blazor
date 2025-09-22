@@ -1,0 +1,30 @@
+<MudPaper Class="pa-4 mud-height-full">
+    <MudGrid Justify="Justify.SpaceBetween">
+        <MudItem>
+            <MudStack Row="true">
+                @if (Icon != null)
+                {
+                    <MudIcon Icon="@Icon" Size="Size.Medium"/>
+                }
+                else
+                {
+                    <div style="width: 40px; height: 40px;"></div>
+                }
+                <MudStack Row="false">
+                    <MudText Typo="Typo.body1">@Title</MudText>
+                    <MudText Typo="Typo.caption">@Caption</MudText>
+                </MudStack>
+            </MudStack>
+        </MudItem>
+        <MudItem>
+            @ChildContent
+        </MudItem>
+    </MudGrid>
+</MudPaper>
+
+@code {
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public string Title { get; set; } = string.Empty;
+    [Parameter] public string Caption { get; set; } = string.Empty;
+    [Parameter] public RenderFragment ChildContent { get; set; } = null!;
+}

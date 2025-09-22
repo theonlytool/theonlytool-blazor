@@ -1,0 +1,16 @@
+{
+  "SourceFolder": "Styles",
+  "TargetFolder": "wwwroot/css",
+  "Arguments": "--style=compressed --no-source-map",
+  "GenerateScopedCss": true,
+  "ScopedCssFolders": [ "Pages" ],
+  "IncludePaths": [ "Styles" ],
+  "Configurations": {
+    "Debug": {
+      "Arguments": "--style=expanded --no-source-map"
+    },
+    "Release": {
+      "Arguments": "--style=compressed --no-source-map"
+    }
+  }
+}
