@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
+using Services.Base64;
 using theonlytool;
 using theonlytool.Pages.Tools.Base64;
 using theonlytool.Pages.Tools.Hash.HashingService;

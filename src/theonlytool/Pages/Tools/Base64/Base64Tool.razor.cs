@@ -1,3 +1,5 @@
+using Services.Base64;
+
 namespace theonlytool.Pages.Tools.Base64;
 
 public partial class Base64Tool(Base64Service base64Service)
