@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace theonlytool.Pages.Tools.Hash.HashingService.Strategy.Extensions;
+namespace Services.Hashing.Strategy.Extensions;
 
 public static class HashProcessorExtensions
 {

@@ -1,6 +1,4 @@
-using System.Text;
-
-namespace theonlytool.Pages.Tools.Hash.HashingService;
+namespace Services.Hashing;
 
 public interface IHashService
 {

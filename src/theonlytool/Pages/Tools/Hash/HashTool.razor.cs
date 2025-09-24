@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Components;
-using theonlytool.Pages.Tools.Hash.HashingService;
+using Services.Hashing;
 
 namespace theonlytool.Pages.Tools.Hash;
 

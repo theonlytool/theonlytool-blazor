@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace theonlytool.Pages.Tools.Base64;
+namespace Services.Base64;
 
 public class Base64Service
 {
