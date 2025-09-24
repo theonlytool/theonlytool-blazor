@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 using theonlytool;
 using theonlytool.Pages.Tools.Base64;
+using theonlytool.Pages.Tools.Hash.HashingService;
+using theonlytool.Pages.Tools.Hash.HashingService.Strategy;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -18,7 +20,15 @@ static void ConfigureServices(IServiceCollection services, string baseAddress)
     services.AddScoped(_ => new HttpClient { BaseAddress = new Uri(baseAddress) });
     services.AddMudServices();
     
+    // Services
     services.AddSingleton<Base64Service>();
+    // Hash service
+    services.AddSingleton<IHashService, HashService>();
+    services.AddSingleton<IHashProcessor<SupportedHash>, Md5Processor>();
+    services.AddSingleton<IHashProcessor<SupportedHash>, Sha1Processor>();
+    services.AddSingleton<IHashProcessor<SupportedHash>, Sha256Processor>();
+    services.AddSingleton<IHashProcessor<SupportedHash>, Sha384Processor>();
+    services.AddSingleton<IHashProcessor<SupportedHash>, Sha512Processor>();
 
 #if DEBUG
     services.AddSassCompiler();
