@@ -1,0 +1,30 @@
+@page "/tools/hash"
+
+<h3>HashTool</h3>
+
+<MudGrid>
+    <MudItem xs="12" md="6">
+        <MudPaper Class="pa-4 mud-height-full">
+            <MudTextField T="string" DebounceInterval="500" OnDebounceIntervalElapsed="CalculateHashes" @bind-Value="Input"
+                          Label="Input" Variant="Variant.Outlined" FullWidth="true" Lines="20"/>
+        </MudPaper>
+    </MudItem>
+
+    <MudItem xs="12" md="6">
+        <MudPaper Class="pa-4 mud-height-full">
+            <MudTable Items="Hashes" Hover="true">
+                <ToolBarContent>
+                    <MudText Typo="Typo.h6">Hashes</MudText>
+                </ToolBarContent>
+                <HeaderContent>
+                    <MudTh>Hash Type</MudTh>
+                    <MudTh>Hash Value</MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Hash Type">@context.Item1</MudTd>
+                    <MudTd DataLabel="Hash Value">@context.Item2</MudTd>
+                </RowTemplate>
+            </MudTable>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
