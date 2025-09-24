@@ -38,5 +38,31 @@ namespace Services.HashingTests
             var expectedHash = CalculateExpectedHash(Encoding.UTF8.GetBytes(input), algorithm);
             hash.Should().BeEquivalentTo(expectedHash);
         }
+
+        [Test]
+        public void ComputeHash_NullByteArrayInput_ThrowsArgumentNullException()
+        {
+            // Arrange
+            var hashService = CreateHashService();
+            byte[] input = null!;
+            const SupportedHash algorithm = SupportedHash.MD5;
+
+            // Act & Assert
+            var execute = () => hashService.ComputeHash(input, algorithm);
+            execute.Should().Throw<ArgumentNullException>();
+        }
+
+        [Test]
+        public void ComputeHash_NullStringInput_ThrowsArgumentNullException()
+        {
+            // Arrange
+            var hashService = CreateHashService();
+            string input = null!;
+            const SupportedHash algorithm = SupportedHash.MD5;
+
+            // Act & Assert
+            var execute = () => hashService.ComputeHash(input, algorithm);
+            execute.Should().Throw<ArgumentNullException>();
+        }
     }
 }

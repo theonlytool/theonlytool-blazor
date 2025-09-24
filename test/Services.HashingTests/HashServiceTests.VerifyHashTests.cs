@@ -134,5 +134,33 @@ namespace Services.HashingTests
             // Assert
             result.Should().BeTrue();
         }
+        
+        [Test]
+        public void VerifyHash_NullExpectedHexHash_ThrowsArgumentNullException()
+        {
+            // Arrange
+            var hashService = CreateHashService();
+            var data = Encoding.UTF8.GetBytes("test");
+            string expectedHexHash = null!;
+            const SupportedHash algorithm = SupportedHash.MD5;
+
+            // Act & Assert
+            var execute = () => hashService.VerifyHash(data, expectedHexHash, algorithm);
+            execute.Should().Throw<ArgumentNullException>();
+        }
+
+        [Test]
+        public void VerifyHash_NullStringInput_NullExpectedHexHash_ThrowsArgumentNullException()
+        {
+            // Arrange
+            var hashService = CreateHashService();
+            string text = null!;
+            string expectedHexHash = null!;
+            const SupportedHash algorithm = SupportedHash.MD5;
+
+            // Act & Assert
+            var execute = () => hashService.VerifyHash(text, expectedHexHash, algorithm);
+            execute.Should().Throw<ArgumentNullException>();
+        }
     }
 }
