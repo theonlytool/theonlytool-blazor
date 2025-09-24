@@ -1,10 +1,9 @@
-using System.Text;
 using theonlytool.Pages.Tools.Hash.HashingService.Strategy;
 using theonlytool.Pages.Tools.Hash.HashingService.Strategy.Extensions;
 
 namespace theonlytool.Pages.Tools.Hash.HashingService
 {
-    public class HashService(IHashProcessor<SupportedHash>[] hashProcessors) : IHashService
+    public class HashService(IEnumerable<IHashProcessor<SupportedHash>> hashProcessors) : IHashService
     {
         public string ComputeHash(byte[] data, SupportedHash algorithm)
         {
