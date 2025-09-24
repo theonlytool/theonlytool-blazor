@@ -23,6 +23,7 @@ namespace Services.Hashing
 
         public bool VerifyHash(byte[] data, string expectedHexHash, SupportedHash algorithm)
         {
+            ArgumentNullException.ThrowIfNull(data);
             ArgumentNullException.ThrowIfNull(expectedHexHash);
             
             var hashProcessor = hashProcessors.First(x => x.HashAlgorithm == algorithm);
@@ -32,6 +33,7 @@ namespace Services.Hashing
 
         public bool VerifyHash(string text, string expectedHexHash, SupportedHash algorithm)
         {
+            ArgumentNullException.ThrowIfNull(text);
             ArgumentNullException.ThrowIfNull(expectedHexHash);
             
             var hashProcessor = hashProcessors.First(x => x.HashAlgorithm == algorithm);
