@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 using AwesomeAssertions;
-using theonlytool.Pages.Tools.Hash.HashingService;
+using Services.Hashing;
 
 namespace TheOnlyToolTests;
 

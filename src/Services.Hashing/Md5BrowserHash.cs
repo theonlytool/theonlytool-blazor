@@ -1,4 +1,4 @@
-namespace theonlytool.Pages.Tools.Hash.HashingService;
+namespace Services.Hashing;
 
 /// <summary>
 ///     Internal MD5 implementation, because the built-in one is not available in the browser.

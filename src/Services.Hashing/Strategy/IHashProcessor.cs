@@ -1,5 +1,5 @@
 
-namespace theonlytool.Pages.Tools.Hash.HashingService.Strategy;
+namespace Services.Hashing.Strategy;
 
 public interface IHashProcessor <out T> where T : Enum
 {

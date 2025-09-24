@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-namespace theonlytool.Pages.Tools.Hash.HashingService.Strategy;
+namespace Services.Hashing.Strategy;
 
 public class Sha512Processor : IHashProcessor<SupportedHash>
 {

@@ -1,4 +1,4 @@
-namespace theonlytool.Pages.Tools.Hash.HashingService.Strategy;
+namespace Services.Hashing.Strategy;
 
 public class Md5Processor : IHashProcessor<SupportedHash>
 {

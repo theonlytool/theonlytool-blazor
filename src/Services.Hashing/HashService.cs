@@ -1,7 +1,7 @@
-using theonlytool.Pages.Tools.Hash.HashingService.Strategy;
-using theonlytool.Pages.Tools.Hash.HashingService.Strategy.Extensions;
+using Services.Hashing.Strategy;
+using Services.Hashing.Strategy.Extensions;
 
-namespace theonlytool.Pages.Tools.Hash.HashingService
+namespace Services.Hashing
 {
     public class HashService(IEnumerable<IHashProcessor<SupportedHash>> hashProcessors) : IHashService
     {

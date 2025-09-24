@@ -1,4 +1,4 @@
-namespace theonlytool.Pages.Tools.Hash.HashingService;
+namespace Services.Hashing;
 
 public enum SupportedHash
 {

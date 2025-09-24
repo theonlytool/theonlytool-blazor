@@ -1,8 +1,8 @@
 using System.Security.Cryptography;
 using System.Text;
 using AwesomeAssertions;
-using theonlytool.Pages.Tools.Hash.HashingService;
-using theonlytool.Pages.Tools.Hash.HashingService.Strategy;
+using Services.Hashing;
+using Services.Hashing.Strategy;
 
 namespace TheOnlyToolTests
 {
