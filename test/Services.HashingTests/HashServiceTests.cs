@@ -22,7 +22,7 @@ namespace Services.HashingTests
 
             // Assert
             var expectedHash = CalculateExpectedHash(input, algorithm);
-            hash.Should().Be(expectedHash);
+            hash.Should().BeEquivalentTo(expectedHash);
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace Services.HashingTests
 
             // Assert
             var expectedHash = CalculateExpectedHash(Encoding.UTF8.GetBytes(input), algorithm);
-            hash.Should().Be(expectedHash);
+            hash.Should().BeEquivalentTo(expectedHash);
         }
 
         [Test]
