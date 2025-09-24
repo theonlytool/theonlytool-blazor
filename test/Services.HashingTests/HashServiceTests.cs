@@ -4,7 +4,7 @@ using AwesomeAssertions;
 using Services.Hashing;
 using Services.Hashing.Strategy;
 
-namespace TheOnlyToolTests
+namespace Services.HashingTests
 {
     [TestFixture]
     public class HashServiceTests

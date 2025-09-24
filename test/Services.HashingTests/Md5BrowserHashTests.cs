@@ -3,7 +3,7 @@ using System.Text;
 using AwesomeAssertions;
 using Services.Hashing;
 
-namespace TheOnlyToolTests;
+namespace Services.HashingTests;
 
 [TestFixture]
 public class Md5BrowserHashTests
