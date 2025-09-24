@@ -34,7 +34,7 @@ namespace TheOnlyToolTests
             const SupportedHash algorithm = SupportedHash.MD5;
 
             // Act
-            var hash = hashService.ComputeHash(input, null, algorithm);
+            var hash = hashService.ComputeHash(input, algorithm);
 
             // Assert
             var expectedHash = CalculateExpectedHash(Encoding.UTF8.GetBytes(input), algorithm);

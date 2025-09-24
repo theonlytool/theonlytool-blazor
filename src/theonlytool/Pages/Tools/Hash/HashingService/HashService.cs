@@ -14,7 +14,7 @@ namespace theonlytool.Pages.Tools.Hash.HashingService
             return hashProcessor.Calculate(data);
         }
 
-        public string ComputeHash(string text, Encoding? encoding, SupportedHash algorithm)
+        public string ComputeHash(string text, SupportedHash algorithm)
         {
             ArgumentNullException.ThrowIfNull(text);
             
