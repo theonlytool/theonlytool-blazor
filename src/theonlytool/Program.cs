@@ -31,7 +31,8 @@ static void ConfigureServices(IServiceCollection services, string baseAddress)
     services.AddSingleton<IHashProcessor<SupportedHash>, Sha256Processor>();
     services.AddSingleton<IHashProcessor<SupportedHash>, Sha384Processor>();
     services.AddSingleton<IHashProcessor<SupportedHash>, Sha512Processor>();
-
+    services.AddSingleton<IHashProcessor<SupportedHash>, Crc32Processor>();
+    
 #if DEBUG
     services.AddSassCompiler();
 #endif

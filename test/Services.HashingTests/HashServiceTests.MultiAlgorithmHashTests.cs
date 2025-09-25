@@ -12,6 +12,7 @@ namespace Services.HashingTests
         [TestCase(SupportedHash.SHA256, "test")]
         [TestCase(SupportedHash.SHA384, "test")]
         [TestCase(SupportedHash.SHA512, "test")]
+        [TestCase(SupportedHash.CRC32, "test")]
         public void ComputeHash_StringInput_AllAlgorithms_ReturnsCorrectHash(SupportedHash algorithm, string input)
         {
             // Arrange
@@ -30,6 +31,7 @@ namespace Services.HashingTests
         [TestCase(SupportedHash.SHA256, "test")]
         [TestCase(SupportedHash.SHA384, "test")]
         [TestCase(SupportedHash.SHA512, "test")]
+        [TestCase(SupportedHash.CRC32, "test")]
         public void VerifyHash_StringInput_AllAlgorithms_ReturnsTrue(SupportedHash algorithm, string input)
         {
             // Arrange
@@ -48,6 +50,7 @@ namespace Services.HashingTests
         [TestCase(SupportedHash.SHA256, "test", "wrongHash")]
         [TestCase(SupportedHash.SHA384, "test", "wrongHash")]
         [TestCase(SupportedHash.SHA512, "test", "wrongHash")]
+        [TestCase(SupportedHash.CRC32, "test", "wrongHash")]
         public void VerifyHash_StringInput_AllAlgorithms_WithDifferentHash_ReturnsFalse(SupportedHash algorithm, string input, string wrongHash)
         {
             // Arrange
