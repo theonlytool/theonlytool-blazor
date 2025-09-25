@@ -4,8 +4,8 @@ using MudBlazor.Services;
 using Services.Base64;
 using Services.Hashing;
 using Services.Hashing.Strategy;
+using Services.Url;
 using theonlytool;
-using theonlytool.Pages.Tools.Base64;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -23,6 +23,7 @@ static void ConfigureServices(IServiceCollection services, string baseAddress)
     
     // Services
     services.AddSingleton<Base64Service>();
+    services.AddSingleton<UrlService>();
     // Hash service
     services.AddSingleton<IHashService, HashService>();
     services.AddSingleton<IHashProcessor<SupportedHash>, Md5Processor>();

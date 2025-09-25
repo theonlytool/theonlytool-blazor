@@ -29,6 +29,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Services.Base64\Services.Base64.csproj" />
       <ProjectReference Include="..\Services.Hashing\Services.Hashing.csproj" />
+      <ProjectReference Include="..\Services.Url\Services.Url.csproj" />
     </ItemGroup>
 
 </Project>
