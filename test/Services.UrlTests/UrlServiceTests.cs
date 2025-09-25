@@ -38,6 +38,21 @@ namespace Services.UrlTests
         }
         
         [Test]
+        public void Encode_WithInvalidUrl_ShouldReturnErrorMessage()
+        {
+            // Arrange
+            const string input = "invalid]";
+            
+            // Act
+            var result = _urlService.Encode(input);
+            
+            // Assert
+            result.Should().Be("The Input is not a valid URL string.");
+        }
+                
+                
+        
+        [Test]
         public void Decode_WithNullUrl_ShouldThrowArgumentNullException()
         {
             // Arrange & Act
@@ -58,6 +73,19 @@ namespace Services.UrlTests
 
             // Assert
             result.Should().Be("https://example.com/path with spaces");
+        }
+
+        [Test]
+        public void Decode_WithInvalidUrl_ShouldReturnErrorMessage()
+        {
+            // Arrange
+            const string input = "invalid]";
+
+            // Act
+            var result = _urlService.Decode(input);
+
+            // Assert
+            result.Should().Be("The Input is not a valid URL string.");
         }
     }
 }

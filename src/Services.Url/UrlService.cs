@@ -6,17 +6,31 @@ public class UrlService
     {
         ArgumentNullException.ThrowIfNull(url);
         
-        var uri = new Uri(url);
+        try
+        {
+            var uri = new Uri(url);
 
-        return uri.AbsoluteUri;
+            return uri.AbsoluteUri;
+        }
+        catch (UriFormatException)
+        {
+            return "The Input is not a valid URL string.";
+        }
     }
     
     public string Decode(string encodedUrl)
     {
         ArgumentNullException.ThrowIfNull(encodedUrl);
         
-        var uri = new Uri(encodedUrl);
+        try
+        {
+            var uri = new Uri(encodedUrl);
 
-        return uri.ToString();
+            return uri.ToString();
+        }
+        catch (UriFormatException)
+        {
+            return "The Input is not a valid URL string.";
+        }
     }
 }
