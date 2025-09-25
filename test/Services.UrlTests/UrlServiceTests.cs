@@ -28,7 +28,7 @@ namespace Services.UrlTests
         public void Encode_WithSpaceAsUrlPathTrue_ShouldUrlPathEncode()
         {
             // Arrange
-            var input = "https://example.com/path with spaces";
+            const string input = "https://example.com/path with spaces";
 
             // Act
             var result = _urlService.Encode(input);
@@ -66,7 +66,7 @@ namespace Services.UrlTests
         public void Decode_WithSpaceAsUrlPathTrue_ShouldUrlPathEncode()
         {
             // Arrange
-            var input = "https://example.com/path%20with%20spaces";
+            const string input = "https://example.com/path%20with%20spaces";
 
             // Act
             var result = _urlService.Decode(input);
