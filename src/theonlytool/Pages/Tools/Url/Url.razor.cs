@@ -6,8 +6,8 @@ namespace theonlytool.Pages.Tools.Url;
 public partial class Url(UrlService urlEncode) : ComponentBase
 {
     public bool Encode { get; set; } = true;
-    public string Input { get; set; }
-    public string Output { get; set; }
+    public string Input { get; set; } = string.Empty;
+    public string Output { get; set; } = string.Empty;
 
     private void UpdateOutput(string newValue)
     {
