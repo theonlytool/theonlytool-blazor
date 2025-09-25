@@ -1,0 +1,33 @@
+@page "/tools/url"
+
+<h3>Url</h3>
+
+<MudGrid>
+    <MudItem xs="12" md="12">
+        <SettingCard Title="Direction" Caption="Choose the direction of the conversion"
+                     Icon="@Icons.Material.Filled.SwapHoriz">
+            <MudToggleGroup T="bool" SelectionMode="SelectionMode.SingleSelection" Value="Encode" ValueChanged="@(v => { Encode = v; UpdateOutput(Input); })">
+                <MudToggleItem Value="true">Encode</MudToggleItem>
+                <MudToggleItem Value="false">Decode</MudToggleItem>
+            </MudToggleGroup>
+        </SettingCard>
+    </MudItem>
+
+    <MudItem xs="12" md="6">
+        <MudPaper Class="pa-4 mud-height-full">
+            <MudTextField T="string" DebounceInterval="500" OnDebounceIntervalElapsed="UpdateOutput" @bind-Value="Input"
+                          Label="Input" Variant="Variant.Outlined" FullWidth="true" Lines="20"/>
+        </MudPaper>
+    </MudItem>
+
+    <MudItem xs="12" md="6">
+        <MudPaper Class="pa-4 mud-height-full">
+            <MudTextField T="string" @bind-Value="Output" ReadOnly="true" Label="Output" Variant="Variant.Outlined"
+                          FullWidth="true" Lines="20"/>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+@code {
+
+}
