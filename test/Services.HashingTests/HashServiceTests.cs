@@ -1,3 +1,4 @@
+using System.IO.Hashing;
 using System.Security.Cryptography;
 using Services.Hashing;
 using Services.Hashing.Strategy;
@@ -15,6 +16,7 @@ public partial class HashServiceTests
             SupportedHash.SHA256 => Convert.ToHexStringLower(SHA256.HashData(input)),
             SupportedHash.SHA384 => Convert.ToHexStringLower(SHA384.HashData(input)),
             SupportedHash.SHA512 => Convert.ToHexStringLower(SHA512.HashData(input)),
+            SupportedHash.CRC32 => Crc32.HashToUInt32(input).ToString(),
             _ => throw new ArgumentException("Unsupported hash algorithm")
         };
     }
@@ -27,7 +29,8 @@ public partial class HashServiceTests
             new Sha1Processor(),
             new Sha256Processor(),
             new Sha384Processor(),
-            new Sha512Processor()
+            new Sha512Processor(),
+            new Crc32Processor()
         };
         return new HashService(hashProcessors);
     }
