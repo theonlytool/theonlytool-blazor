@@ -1,8 +1,5 @@
 # TheOnlyTool
 
-Github pages:
-https://theonlytool.github.io/
-
 Cloudflare pages:
 https://theonlytool.pages.dev/
 
