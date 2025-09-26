@@ -30,7 +30,26 @@
   color: var(--mud-palette-text-secondary);
 }
 
-ul {
+.features ul,
+.technologies ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: left;
+
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    .mud-icon {
+      margin-right: 8px;
+    }
+  }
+}
+
+ul:not(.features ul):not(.technologies ul) {
   list-style-type: none;
   padding: 0;
 
