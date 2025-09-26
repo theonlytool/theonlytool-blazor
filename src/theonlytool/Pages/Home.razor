@@ -1,23 +1,56 @@
 ﻿@page "/"
-@using theonlytool.Pages.Components
 
 <PageTitle>Home</PageTitle>
 
 <MudGrid>
-    <MudItem xs="12" md="3" Class="mt-16">
-        <div class="docs-sticky-info explore-text">
-            <MudText Typo="Typo.h5">Data Tools</MudText>
-            <MudText Typo="Typo.subtitle1">…</MudText>
+    <MudItem xs="12" Class="mt-16">
+        <div class="header">
+            <MudText Typo="Typo.h3" Class="title">TheOnlyTool</MudText>
+            <MudText Typo="Typo.subtitle1" Class="description">
+                TheOnlyTool is a web application created using Blazor WebAssembly, designed to provide a collection of useful tools for daily tasks.
+            </MudText>
         </div>
     </MudItem>
-    <MudItem xs="12" md="9" Class="mt-16">
-        <div class="explore-mudblazor-items">
-            <ToolCard Title="Base64 Encoder/Decoder" Link="/tools/base64">
-                <MudIcon Size="Size.Large" Icon="@Icons.Material.Filled.SwapHoriz" />
-            </ToolCard>
-            <ToolCard Title="Multi Hash Generator" Link="/tools/hash">
-                <MudIcon Size="Size.Large" Icon="@Icons.Material.Filled.Fingerprint" />
-            </ToolCard>
+
+    <MudItem xs="12" Class="mt-16">
+        <div class="features">
+            <MudText Typo="Typo.h4" Class="section-title">Features</MudText>
+            <MudText Typo="Typo.subtitle1" Class="section-description">
+                TheOnlyTool offers a variety of tools to simplify your daily tasks:
+            </MudText>
+            <ul>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBox" /> Hashing: Generate hashes using various algorithms.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBox" /> URL Encoding/Decoding: Encode URL paths.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBox" /> Base64 Encoding/Decoding: Encode and decode data using Base64.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBoxOutlineBlank" /> Color Converter/Selector: Convert colors between different formats and select colors easily.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBoxOutlineBlank" /> QR Generator: Generate QR codes for various purposes.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBoxOutlineBlank" /> UUID Generator: Generate unique identifiers (UUIDs).</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBoxOutlineBlank" /> Random Numbers/Characters Generator: Generate random numbers and characters, useful for passwords.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBoxOutlineBlank" /> Text Tools: For change capitalization, and text counting.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBoxOutlineBlank" /> CSV Toolbox: Open, Edit and Save CSV files.</li>
+                <li><MudIcon Size="Size.Small" Icon="@Icons.Material.Filled.CheckBoxOutlineBlank" /> JWT Inspector: An easy way to decode a JWT Token.</li>
+            </ul>
+        </div>
+    </MudItem>
+
+    <MudItem xs="12" Class="mt-16">
+        <div class="technologies">
+            <MudText Typo="Typo.h4" Class="section-title">Technologies Used</MudText>
+            
+            <MudText Typo="Typo.subtitle1" Class="section-description">- Blazor WebAssembly: A framework for building interactive web applications using C#.</MudText>
+            <MudText Typo="Typo.subtitle1" Class="section-description">- MudBlazor: A Material Design component library for Blazor.</MudText>
+            <MudText Typo="Typo.subtitle1" Class="section-description">- GitHub: Version control and collaboration platform.</MudText>
+            <MudText Typo="Typo.subtitle1" Class="section-description">- Cloudflare Pages: Fast and secure deployment platform.</MudText>
+        </div>
+    </MudItem>
+    
+    <MudItem xs="12" Class="mt-16">
+        <div class="github-link">
+            <MudText Typo="Typo.subtitle1" Class="section-description">
+                <MudIcon Size="Size.Small" Icon="@Icons.Custom.Brands.GitHub" />
+                
+                <a href="https://github.com/theonlytool/theonlytool.github.io" target="_blank">View on GitHub</a>
+            </MudText>
         </div>
     </MudItem>
 </MudGrid>
